@@ -32,7 +32,7 @@ Se utiliza **Delta Lake** por:
 
 Se eligió un **Star Schema** debido a:
 
-- Optimización para consultas de negocio (KPIs)  
+- Optimización para consultas puntuales de negocio (KPIs)  
 - Buen rendimiento en agregaciones y filtros por dimensiones  
 - Separación clara entre **hechos** y **dimensiones**  
 
@@ -43,7 +43,7 @@ Se eligió un **Star Schema** debido a:
 La ingesta hacia **Bronze** es **append-only**.
 
 - No se aplican validaciones en esta capa  
-- Se preserva el dato tal como llega del sistema fuente  
+- Se preserva el dato tal como llega de la fuente (Archivo CSV)
 
 ---
 
@@ -53,8 +53,8 @@ La ingesta hacia **Bronze** es **append-only**.
 
 Conversión explícita de tipos:
 
-- `precio` → DOUBLE  
-- `total` → DOUBLE  
+- `precio` → INT  
+- `total` → INT  
 - `vtafecha` → TIMESTAMP  
 
 ---
@@ -81,10 +81,10 @@ Estos valores corresponden a inconsistencias del sistema fuente.
 
 Se aplican procesos de limpieza:
 
-- Normalización a minúsculas  
-- Eliminación de espacios extra  
-- Eliminación de tildes  
-- Remoción de caracteres especiales  
+- Eliminación de tildes
+- Eliminacion de espacios innecesarios
+- Limpieza de caracteres especiales
+- Normalización de mayúsculas/minúsculas
 
 ---
 
@@ -109,5 +109,17 @@ Se aplica:
 
 - `ROW_NUMBER()` para conservar el registro más reciente  
 - Hash MD5 para detección de cambios y soporte (SCD Type 2) con `MERGE` incremental  
+---
+## 7. Orquestacion
 
+El pipeline de ventas está diseñado bajo arquitectura Medallion (Bronze → Silver → Gold). Se implementa un **pipeline batch incremental con ejecución diaria a las 02:00 AM**.
+
+Esto permite:
+
+ - **Bajo impacto operativo**: se ejecuta fuera del horario comercial.
+ - **Consistencia entre capas**: el flujo se orquesta secuencialmente
+  (Bronze → Silver → Gold → KPIs).
+ - **Optimización de costos**: se evita procesamiento innecesario en tiempo real.
+ - **Datos disponibles** cada mañana para análisis.
+ - **Trazabilidad completa del flujo de dato**
 
