@@ -119,8 +119,8 @@ Clasificación de productos en categorías comerciales para:
 ---
 
 # 🧱 Modelo de Datos - Star Schema
-![imagen_1772667381315.png](./imagen_1772667381315.png "imagen_1772667381315.png")
 
+![Modelo Star Schema](sql/docs/modelo_star_schema.png)
 ---
 # 🔄 Estrategia de Ingesta
 
