@@ -227,7 +227,7 @@ Implementada con **Databricks Workflows**:
 - Crecimiento mensual: **5.3M → 285M** (mes 7 a 12)
 
 #### 🛵 Canal de venta
-- El delivery pierde participación: **16.9% → 10.4%**  
+- El delivery pierde participación: **21.14% → 11.73%**  
 - El local concentra hasta **88.7%** en temporada alta  
 
 #### 🍨 Mix de productos
