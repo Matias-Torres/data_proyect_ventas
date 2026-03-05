@@ -1,4 +1,4 @@
-# 🍦 Proyecto Data Engineering – Pipeline de Ventas de Heladería
+# 🍦 Proyecto Data Engineering – Pipeline de Ventas de Heladería - 6 meses | Databricks
 
 ## 📌 Descripción
 Pipeline de datos **end-to-end** desarrollado en **Databricks** utilizando **Apache Spark** y **Delta Lake**, orientado al análisis de ventas de una heladería.
