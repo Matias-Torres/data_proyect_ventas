@@ -26,7 +26,7 @@ Se estandarizaron columnas de tipo string mediante:
 - `Eliminación de tildes`
 - `Eliminacion de espacios innecesarios`
 - `Limpieza de caracteres especiales`
-- `Normalización de mayúsculas/minúsculas`
+- `Normalización a minúsculas`
 
 Objetivo: evitar duplicados semánticos y mejorar consistencia analítica.
 

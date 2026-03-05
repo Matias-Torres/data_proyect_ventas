@@ -84,7 +84,7 @@ Se aplican procesos de limpieza:
 - Eliminación de tildes
 - Eliminacion de espacios innecesarios
 - Limpieza de caracteres especiales
-- Normalización de mayúsculas/minúsculas
+- Normalización a minuscula
 
 ---
 
