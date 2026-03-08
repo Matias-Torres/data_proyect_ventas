@@ -114,6 +114,7 @@ Clasificación de productos en categorías comerciales para:
 ### 🥇 Gold
 - Modelo **Star Schema**  
 - Tablas de hechos y dimensiones  
+- Soprte SCD Type 2 en dim_producto
 - KPIs agregados para análisis  
 
 ---

@@ -34,7 +34,8 @@ Se eligió un **Star Schema** debido a:
 
 - Optimización para consultas puntuales de negocio (KPIs)  
 - Buen rendimiento en agregaciones y filtros por dimensiones  
-- Separación clara entre **hechos** y **dimensiones**  
+- Separación clara entre **hechos** y **dimensiones** 
+- Gestion de atributos, con soporte SCD Type 2 en la dim_producto, que permite mantener el historial completo de cambios y preservar la consistencia histórica de las ventas registradas en la tabla de hechos. 
 
 ---
 
@@ -108,7 +109,7 @@ Se define la unicidad del registro mediante la clave compuesta:
 Se aplica:
 
 - `ROW_NUMBER()` para conservar el registro más reciente  
-- Hash MD5 para detección de cambios y soporte (SCD Type 2) con `MERGE` incremental  
+- Hash MD5 para detección de cambios y duplicados con `MERGE` incremental  
 ---
 ## 7. Orquestacion
 
