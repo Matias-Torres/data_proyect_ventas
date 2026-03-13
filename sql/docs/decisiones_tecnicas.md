@@ -21,7 +21,7 @@ Esta separación permite:
 - **Motor:** Apache Spark (Databricks)  
 - **Formato de almacenamiento:** Delta Lake  
 
-Se utiliza **Delta Lake** por:
+Se utiliza **Delta Lake** con:
 
 - Soporte de `MERGE` (upsert incremental)  
 - Control de versiones (**Time Travel**)  
@@ -85,7 +85,7 @@ Se aplican procesos de limpieza:
 - Eliminación de tildes
 - Eliminacion de espacios innecesarios
 - Limpieza de caracteres especiales
-- Normalización a minuscula
+- Convertir caracteres a minusculas
 
 ---
 

@@ -1,7 +1,7 @@
 # 🍦 Proyecto Data Engineering – Pipeline de Ventas de Heladería - 6 meses | Databricks
 
 ## 📌 Descripción
-Pipeline de datos **end-to-end** desarrollado en **Databricks** utilizando **Apache Spark** y **Delta Lake**, orientado al análisis de ventas de una heladería.
+Pipeline de datos **end-to-end** desarrollado en **Databricks** , orientado al análisis de ventas de una heladería, con el objetivo de estructurar mejor la informacion y poder analizar el negocio de una forma mas clara para la toma de decisiones.
 
 El dataset comprende 6 meses de transacciones, sobre los cuales se implementó una arquitectura analítica basada en el enfoque **Medallion (Bronze–Silver–Gold)**, permitiendo transformar datos crudos en un **modelo dimensional Star Schema** optimizado para análisis y visualización.
 
@@ -10,7 +10,7 @@ El dataset comprende 6 meses de transacciones, sobre los cuales se implementó u
 # 🏗️ Arquitectura
 
 ## 🔹 Medallion Architecture
-
+![Medallion Architecture](sql/docs/diagrama_arquitectura_medallion.png)
 ### 🥉 Bronze
 - Ingesta **append-only** desde un archivo CSV  
 - Sin transformaciones  
@@ -26,7 +26,7 @@ Se estandarizaron columnas de tipo string mediante:
 - `Eliminación de tildes`
 - `Eliminacion de espacios innecesarios`
 - `Limpieza de caracteres especiales`
-- `Normalización a minúsculas`
+- `Convertir caracteres a minusculas`
 
 Objetivo: evitar duplicados semánticos y mejorar consistencia analítica.
 
@@ -214,11 +214,12 @@ ORDER BY mes
 
 Implementada con **Databricks Workflows**:
 
+- Implemente un **pipeline batch incremental con ejecución diaria a las 02:00 AM** 
 - Ingesta Bronze  
 - Transformación Silver  
 - Carga de dimensiones (MERGE)  
 - Carga de fact  
-- Implemente un **pipeline batch incremental con ejecución diaria a las 02:00 AM** 
+
 
 ---
 
@@ -245,11 +246,11 @@ Implementada con **Databricks Workflows**:
 - Efectivo: **30.1%**  
 
 #### ⏱️ Horas pico
-- 17:00–18:00  
+- 16:00–18:00  
 - 20:00–22:30  
 
 #### 💤 Baja actividad
-- 11:00–13:00  
+- 10:00–13:00  
 - 00:00–02:00  
 
 ---
