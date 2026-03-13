@@ -278,16 +278,20 @@ data_proyect_ventas
 ├── docs
 │   ├── decisiones_tecnicas.md
 │   └── modelo_star_schema.png
+|   └── diagrama_arquitectura_medallion.png
+|      
 │
 ├── EDA
-│   ├── 01_estructura_bronze
-│   ├── 02_nulos_bronze
-│   ├── 03_distribucion_bronze
-│   ├── 04_problemas_calidad_bronze
-│   ├── 05_estadisticas_descriptivas
-│   ├── 06_eda_avanzado
-│   └── 07_resumen_dataset
-│
+│   ├── 01_EDA_estructura_bronze
+│   ├── 02_EDA_analisis_nulos_bronze
+│   ├── 03_EDA_analisis_distribucion_bronze
+│   ├── 04_EDA_problemas_calidad_bronze
+│   ├── 05_EDA_estadisticas_descriptivas
+│   ├── 06_EDA_avanzado
+│   └── 07_EDA_resumen_dataset_bronze
+│   └── view_EDA_diseño_tabla_silver
+|   └── view_EDA_estadistica_bronze
+|
 └── ETL
     ├── bronze
     │   └── etl_load_ventas_bronze.py
