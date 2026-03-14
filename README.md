@@ -3,7 +3,7 @@
 ## 📌 Descripción
 Pipeline de datos **end-to-end** desarrollado en **Databricks** , orientado al análisis de ventas de una heladería, con el objetivo de estructurar mejor la informacion y poder analizar el negocio de una forma mas clara para la toma de decisiones.
 
-El dataset comprende 6 meses de transacciones, sobre los cuales se implementó una arquitectura analítica basada en el enfoque **Medallion (Bronze–Silver–Gold)**, permitiendo transformar datos crudos en un **modelo dimensional Star Schema** optimizado para análisis y visualización.
+El dataset comprende 6 meses de transacciones, sobre los cuales se implementó una arquitectura analítica basada en el enfoque **Medallion (Bronze–Silver–Gold)** con **orquestacion automatizada**, permitiendo transformar datos crudos en un **modelo dimensional Star Schema** optimizado para análisis y visualización.
 
 ---
 
