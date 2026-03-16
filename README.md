@@ -233,24 +233,23 @@ Implementada con **Databricks Workflows**:
 - El local concentra hasta **88.7%** en temporada alta  
 
 #### 🍨 Mix de productos
-- El **granel (1kg, ½kg, ¼kg)** lidera en:
+- El **granel ( el helado de 1kg)** lidera en:
   - facturación  
   - tickets  
   - volumen  
-- Bombones, palitos y tortas funcionan como **productos de impulso**  
-- Los formatos familiares acompañan el **consumo grupal**  
+- Bombones, palitos y tortas, familiares funcionan como **productos de impulso**    
 
 #### 💳 Medios de pago (negocio bancarizado)
-- Tarjeta: **40.2%**  
-- QR: **26.36%**  
-- Efectivo: **30.1%**  
+- Tarjeta: **37.60%**  
+- QR: **27.05%**  
+- Efectivo: **32.23%**  
 
 #### ⏱️ Horas pico
 - 16:00–18:00  
 - 20:00–22:30  
 
 #### 💤 Baja actividad
-- 10:00–13:00  
+- 10:00–14:00  
 - 00:00–02:00  
 
 ---
@@ -312,7 +311,7 @@ data_proyect_ventas
 
 ## 🎯 Objetivo
 
-Construir un pipeline analítico escalable, incremental y trazable, aplicando buenas prácticas de Data Engineering para soportar decisiones de negocio.
+Construir un pipeline analítico escalable, incremental y trazable, aplicando buenas prácticas de modelado de datos y garantizar la calidad para tomar mejores decisiones de negocio.
 
 ## 👤 Autor
 
