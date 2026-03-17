@@ -226,11 +226,13 @@ Implementada con **Databricks Workflows**:
 ## 📈 Insights de Negocio
 
 ####💰 Evolución de facturación
-- Crecimiento mensual: **5.3M → 285M** (mes 7 a 12)
+- Crecimiento mensual: **53M → 284.48M** (mes de Julio a Diciembre)
+![Ventas Mensuales](sql/imagenes/ventas_mensuales.png)
 
 #### 🛵 Canal de venta
 - El delivery pierde participación: **21.14% → 11.73%**  
-- El local concentra hasta **88.7%** en temporada alta  
+- El local concentra hasta **88.27%** en temporada alta  
+![Facturacion Canal](sql/imagenes/facturacion_canal.png)
 
 #### 🍨 Mix de productos
 - El **granel ( el helado de 1kg)** lidera en:
@@ -238,12 +240,13 @@ Implementada con **Databricks Workflows**:
   - tickets  
   - volumen  
 - Bombones, palitos y tortas, familiares funcionan como **productos de impulso**    
+![Ranking Productos](sql/imagenes/ranking_productos.png)
 
 #### 💳 Medios de pago (negocio bancarizado)
 - Tarjeta: **37.60%**  
+- Efectivo: **32.23%**
 - QR: **27.05%**  
-- Efectivo: **32.23%**  
-
+![Medio Pago](sql/imagenes/medio_pagos.png)
 #### ⏱️ Horas pico
 - 16:00–18:00  
 - 20:00–22:30  
@@ -251,7 +254,7 @@ Implementada con **Databricks Workflows**:
 #### 💤 Baja actividad
 - 10:00–14:00  
 - 00:00–02:00  
-
+![Horas Picos](sql/imagenes/horas_picos.png)
 ---
 
 ## 📁 Estructura del Repositorio
