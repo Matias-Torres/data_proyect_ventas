@@ -225,7 +225,7 @@ Implementada con **Databricks Workflows**:
 
 ## 📈 Insights de Negocio
 
-####💰 Evolución de facturación
+#### 💰 Evolución de facturación
 - Crecimiento mensual: **53M → 284.48M** (mes de Julio a Diciembre)
 ![Ventas Mensuales](sql/imagenes/ventas_mensuales.png)
 
