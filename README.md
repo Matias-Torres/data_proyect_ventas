@@ -53,8 +53,8 @@ Columnas críticas fueron validadas bajo reglas estrictas antes de cargar a Gold
 
 Se aplicó conversión explícita de tipos para garantizar consistencia estructural:
 
-- `precio → INT`
-- `total → INT`
+- `precio → DECIMAL`
+- `total → DECIMAL`
 - `vtafecha → TIMESTAMP`
 
 Esto permitió optimizar almacenamiento en Delta Lake y mejorar performance en consultas analíticas.
@@ -159,7 +159,7 @@ Pipeline **idempotente** y **reprocesable** desde Bronze.
 # 🧮 Ejemplo KPI – Ventas Mensuales
 
 ```sql
-CREATE OR REPLACE TABLE catalog_ventas.gold.kpi_ventas_mes
+CREATE TABLE catalog_ventas.gold.kpi_ventas_mes
 USING DELTA
 COMMENT 'KPI Ventas mensuales'
 AS
@@ -179,19 +179,19 @@ WITH base AS (
 
 SELECT
     mes,
-    COUNT(DISTINCT id_venta) AS total_tickets,
-    SUM(total) / 100 AS facturacion,
-    SUM(cant) AS unidades_vendidas,
-    ROUND(SUM(total) / 100 / COUNT(DISTINCT id_venta),2) AS ticket_promedio,
-    ROUND(SUM(cant) / COUNT(DISTINCT id_venta),2) AS unidades_por_ticket,
+    COUNT(id_venta)                         AS total_tickets,
+    ROUND(SUM(total),2)                     AS facturacion,
+    SUM(cant)                               AS unidades_vendidas,
+    ROUND(SUM(total)  / COUNT(id_venta),2)  AS ticket_promedio,
+    ROUND(SUM(cant) / COUNT(id_venta),2)    AS unidades_por_ticket,
 
     ROUND(
-      COUNT(DISTINCT CASE WHEN delivery = TRUE THEN id_venta END)
-      * 100.0 / COUNT(DISTINCT id_venta),2
+      COUNT(CASE WHEN delivery = TRUE THEN id_venta END)
+      * 100.0 / COUNT(id_venta),2
     ) AS pct_delivery,
 
-    ROUND(SUM(CASE WHEN delivery = TRUE THEN total /100 ELSE 0 END),2) AS fact_delivery,
-    ROUND(SUM(CASE WHEN delivery = FALSE THEN total /100 ELSE 0 END),2) AS fact_local,
+    ROUND(SUM(CASE WHEN delivery = TRUE THEN total ELSE 0 END),2) AS fact_delivery,
+    ROUND(SUM(CASE WHEN delivery = FALSE THEN total ELSE 0 END),2) AS fact_local,
 
     ROUND(
       SUM(CASE WHEN delivery = FALSE THEN total ELSE 0 END)
@@ -226,7 +226,7 @@ Implementada con **Databricks Workflows**:
 ## 📈 Insights de Negocio
 
 #### 💰 Evolución de facturación
-- Crecimiento mensual: **53M → 284.48M** (mes de Julio a Diciembre)
+- Crecimiento mensual: **5.3M → 28.5M** (mes de Julio a Diciembre)
 ![Ventas Mensuales](sql/imagenes/ventas_mensuales.png)
 
 #### 🛵 Canal de venta

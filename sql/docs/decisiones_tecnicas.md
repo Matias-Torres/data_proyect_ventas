@@ -54,8 +54,8 @@ La ingesta hacia **Bronze** es **append-only**.
 
 Conversión explícita de tipos:
 
-- `precio` → INT  
-- `total` → INT  
+- `precio` → DECIMAL  
+- `total` → DECIMAL
 - `vtafecha` → TIMESTAMP  
 
 ---
